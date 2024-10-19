@@ -1,4 +1,4 @@
-FROM github.com/purelyKai/cal-hacks-11.0:master as build
+FROM github.com/purelykai/cal-hacks-11.0:master as build
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
