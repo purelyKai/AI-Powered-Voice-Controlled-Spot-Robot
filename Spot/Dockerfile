@@ -1,5 +1,5 @@
 
-FROM ghcr.io/purelykai/cal-hacks-11.0:main as build
+FROM ghcr.io/merklebot/hackathon-amd-image:master as build
 
 
 ENV PYTHONDONTWRITEBYTECODE 1
