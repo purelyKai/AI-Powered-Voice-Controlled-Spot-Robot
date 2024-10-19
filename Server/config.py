@@ -8,7 +8,8 @@ class Config:
     # Deepgram and Fetch.ai API keys
     DEEPGRAM_API_KEY = os.getenv('DEEPGRAM_API_KEY', 'default_deepgram_key')
     FETCH_AI_API_KEY = os.getenv('FETCH_AI_API_KEY', 'default_fetchai_key')
-
+    Spot_Groq_Api_Key = os.getenv('GROQ_API_KEY', 'default_groq_key')
+    
     # Spot robot configuration
     AGENT_RPC = os.getenv('AGENT_RPC', 'ws://127.0.0.1:8888')
     OWNER_KEY = os.getenv('OWNER_KEY', '')
