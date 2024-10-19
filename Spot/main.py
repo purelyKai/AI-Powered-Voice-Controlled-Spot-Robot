@@ -1,7 +1,7 @@
 import os
 import time
 from spot_controller import SpotController
-import cv2
+# import cv2
 from commands import *
 
 
@@ -37,12 +37,13 @@ def main():
         spot.power_on_stand_up()
         #move foward
         foward(spot)
-
+        time.sleep(1)
         #turn left
         turnLeft(spot)
-
+        time.sleep(1)
         #turn right
         turnRight(spot)
+        time.sleep(1)
 
 
         
