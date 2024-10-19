@@ -1,4 +1,4 @@
-FROM ghcr.io/merklebot/hackathon-amd-image:master as build
+FROM github.com/purelyKai/Cal-Hacks-11.0:master as build
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
