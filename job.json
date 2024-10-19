@@ -1,5 +1,5 @@
 {
-    "image": "github.com/purelyKai/Cal-Hacks-11.0:main",
+    "image": "github.com/purelyKai/cal-hacks-11.0:main",
     "container_name": "",
     "ports": [],
     "network_mode": "host",
