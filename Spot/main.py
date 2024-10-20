@@ -17,7 +17,7 @@ def main():
 
         time.sleep(1)
         spotCommander.back()
-        time.sleep(2)
+        time.sleep(1)
 
         commands = spotCommander.getCommands()
 

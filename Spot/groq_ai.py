@@ -1,4 +1,5 @@
 from groq import Groq
+import time
 
 def get_commands(text):
     client = Groq(
@@ -27,6 +28,11 @@ def get_commands(text):
         ],
         model = "llama-3.1-70b-versatile",
     )
-    print(chat_completion.choices[0].message.content)
+
+    time.sleep(5)
+
+    ret_str = chat_completion.choices[0].message.content
+
+    print(ret_str)
     
-    return chat_completion.choices[0].message.content
+    return ret_str
