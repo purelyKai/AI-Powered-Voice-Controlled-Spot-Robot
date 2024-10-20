@@ -1,8 +1,5 @@
-from deepgram import (
-    DeepgramClient,
-    PrerecordedOptions,
-    FileSource,
-)
+from deepgram import DeepgramClient, PrerecordedOptions, FileSource
+
 # Path to the audio file
 AUDIO_FILE = "command.wav"
 API_KEY = "b4ca74a0dff243508decdff556f543869eaffca2"
