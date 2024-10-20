@@ -1,4 +1,3 @@
-import os
 import time
 from spot_controller import SpotController
 # import cv2

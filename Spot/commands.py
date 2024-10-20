@@ -1,10 +1,8 @@
 import os
-import time
 from spot_controller import SpotController
 import math
-import subprocess
-from groq_ai import get_commands
-from stt import getText
+from groq_ai import *
+from stt import *
 # import cv2
 
 # import cv2

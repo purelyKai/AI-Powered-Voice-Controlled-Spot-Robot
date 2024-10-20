@@ -1,4 +1,3 @@
-import os
 from deepgram import (
     DeepgramClient,
     PrerecordedOptions,

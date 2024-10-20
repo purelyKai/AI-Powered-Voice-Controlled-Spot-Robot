@@ -1,5 +1,4 @@
 from groq import Groq
-from config import Config
 
 
 def get_commands(text):
@@ -32,6 +31,3 @@ def get_commands(text):
     print(chat_completion.choices[0].message.content)
     
     return chat_completion.choices[0].message.content
-
-
-get_commands("Why do you move ahead, maybe turn to the left and then move backwards")
