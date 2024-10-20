@@ -15,7 +15,14 @@ def main():
         spotCommander = SpotCommands(spot)
         spot.power_on_stand_up()
 
+        time.sleep(1)
+        spotCommander.back()
+        time.sleep(2)
+
         commands = spotCommander.getCommands()
+
+        time.sleep(1)
+        spotCommander.forward()
         time.sleep(2)
         #sample_name = "taunt.wav"
         for command in commands:

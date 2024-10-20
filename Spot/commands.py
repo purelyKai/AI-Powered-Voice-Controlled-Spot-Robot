@@ -36,7 +36,7 @@ class SpotCommands:
         
         print("Start recording audio")
         sample_name = "command.wav"
-        cmd = f'arecord -vv --format=cd --device={os.environ["AUDIO_INPUT_DEVICE"]} -r 48000 --duration=5 -c 1 {sample_name}'
+        cmd = f'arecord -vv --format=cd --device={os.environ["AUDIO_INPUT_DEVICE"]} -r 48000 --duration=10 -c 1 {sample_name}'
         print(cmd)
         os.system(cmd)
         time.sleep(2)
