@@ -10,11 +10,11 @@ SPOT_USERNAME = "admin"#os.environ['SPOT_USERNAME']
 SPOT_PASSWORD = "2zqa8dgw7lor"#os.environ['SPOT_PASSWORD']
 
 
-def capture_image():
-    camera_capture = cv2.VideoCapture(0)
-    rv, image = camera_capture.read()
-    print(f"Image Dimensions: {image.shape}")
-    camera_capture.release()
+# def capture_image():
+#     camera_capture = cv2.VideoCapture(0)
+#     rv, image = camera_capture.read()
+#     print(f"Image Dimensions: {image.shape}")
+#     camera_capture.release()
 
     # // "image": "ghcr.io/otaberu/hackathon-spot-image:main",
 def main():
