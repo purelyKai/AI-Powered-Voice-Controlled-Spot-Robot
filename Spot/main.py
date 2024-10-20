@@ -22,8 +22,10 @@ def main():
         commands = spotCommander.getCommands()
 
         time.sleep(2)
-        spotCommander.forward()
-        time.sleep(2)
+        spotCommander.turnLeft()
+        time.sleep(1)
+        spotCommander.turnRight()
+        time.sleep(1)
         #sample_name = "taunt.wav"
         for command in commands:
             if "forward" in command:
