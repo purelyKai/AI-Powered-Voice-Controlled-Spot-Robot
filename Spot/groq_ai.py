@@ -4,7 +4,7 @@ from config import Config
 
 def get_commands(text):
     client = Groq(
-        api_key = Config.Spot_Groq_Api_Key,
+        api_key = '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',
     )
     chat_completion = client.chat.completions.create(
         messages = [
