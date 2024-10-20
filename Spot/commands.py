@@ -16,7 +16,8 @@ class SpotCommands:
         self.spot = spot
         self.mic_process = None
         self.sample_name = "command.wav"
-    def foward(self):
+        
+    def forward(self):
         self.spot.move_to_goal(goal_x=.5, goal_y=0)
         return
 
