@@ -26,7 +26,7 @@ async def getText():
 
         # STEP 4: Extract the transcript from the response
         transcript = response["results"]["channels"][0]["alternatives"][0]["transcript"]
-
+        print(transcript)
         # Return the transcript
         return transcript
 
