@@ -4,6 +4,7 @@ from spot_controller import SpotController
 import math
 import subprocess
 from groq_ai import get_commands
+from stt import getText
 # import cv2
 
 # import cv2
@@ -36,16 +37,17 @@ class SpotCommands:
     def getCommands(self):
         
         print("Start recording audio")
-        sample_name = "commands.wav"
+        sample_name = "command.wav"
         cmd = f'arecord -vv --format=cd --device={os.environ["AUDIO_INPUT_DEVICE"]} -r 48000 --duration=10 -c 1 {sample_name}'
         print(cmd)
         os.system(cmd)
 
         #API CALL TO DEEPGRAM HERE
+        text = getText()
         commands = get_commands(text)
-        
-        command_set = ["forward", "turnLeft", "turnRight", "back"]
-        final_commands = text.split()
+        # command_set = ["forward", "turnLeft", "turnRight", "back"]
+        final_commands = commands.split()
+        return final_commands
        
 
 
