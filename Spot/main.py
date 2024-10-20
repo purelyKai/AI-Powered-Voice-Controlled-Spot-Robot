@@ -47,10 +47,10 @@ def main():
         # spotCommander.foward()
         # time.sleep(1)
         #turn left
-        spotCommander.turnLeft()
-        time.sleep(1)
-        #turn right
-        spotCommander.turnRight()
+        # spotCommander.turnLeft()
+        # time.sleep(1)
+        # #turn right
+        # spotCommander.turnRight()
         time.sleep(1)
 
 

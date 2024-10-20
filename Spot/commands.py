@@ -14,7 +14,7 @@ SPOT_PASSWORD = "2zqa8dgw7lor"#os.environ['SPOT_PASSWORD']
 class SpotCommands:
     def __init__(self, spot: SpotController) -> None:
         self.spot = spot
-        self.micProcess = None
+        self.mic_process = None
         self.sample_name = "command.wav"
     def foward(self):
         self.spot.move_to_goal(goal_x=.5, goal_y=0)
@@ -51,11 +51,12 @@ class SpotCommands:
             self.mic_process  = None
             print("Spot stopped listening.")
             os.system(f"ffplay -nodisp -autoexit -loglevel quiet {self.sample_name}")
+            time.sleep(5)
         else:
             print("No active microphone recording.")
     
     # def snapPhoto(self):
-    #     # camera_capture = cv2.VideoCapture(0)
+    #     camera_capture = cv2.VideoCapture(0)
     #     rv, image = camera_capture.read()
     #     print(f"Image Dimensions: {image.shape}")
     #     camera_capture.release()

@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from deepgram import DeepgramClient, PrerecordedOptions
-from config import Config
+from Spot.config import Config
 
 app = Flask(__name__)
 

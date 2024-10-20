@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import deepgram
 import fetch_ai
 #from spot_control.spot_interface import SpotInterface
-from config import Config
+from Spot.config import Config
 
 app = Flask(__name__)
 
