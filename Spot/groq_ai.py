@@ -15,7 +15,7 @@ def get_commands(text):
                 - turnLeft
                 - turnRight
 
-                Respond with only the commands mentioned in the MESSAGE below, list only commands you hear, it's okay to list commands more than once.
+                Respond with only the commands mentioned in the MESSAGE below, list only commands you hear, it's okay to list commands more than once if they are in MESSAGE more than once.
                 
                 """
 
