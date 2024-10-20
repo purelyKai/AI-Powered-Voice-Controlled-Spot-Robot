@@ -1,4 +1,5 @@
 import os
+import time
 from spot_controller import SpotController
 import math
 from groq_ai import *
@@ -38,6 +39,7 @@ class SpotCommands:
         cmd = f'arecord -vv --format=cd --device={os.environ["AUDIO_INPUT_DEVICE"]} -r 48000 --duration=5 -c 1 {sample_name}'
         print(cmd)
         os.system(cmd)
+        time.sleep(2)
 
         #API CALL TO DEEPGRAM HERE
         text = getText()

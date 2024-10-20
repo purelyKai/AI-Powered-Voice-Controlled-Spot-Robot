@@ -16,27 +16,28 @@ def main():
         spot.power_on_stand_up()
 
         commands = spotCommander.getCommands()
-        sample_name = "taunt.wav"
+        time.sleep(2)
+        #sample_name = "taunt.wav"
         for command in commands:
             if "forward" in command:
                 print("Playing sound")
-                os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
-                time.sleep(1)
+                #os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
+                time.sleep(2)
                 spotCommander.forward()
             elif "back" in command:
                 print("Playing sound")
-                os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
-                time.sleep(1)
+                #os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
+                time.sleep(2)
                 spotCommander.back()
             elif "turnLeft" in command:
                 print("Playing sound")
-                os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
-                time.sleep(1)
+                #os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
+                time.sleep(2)
                 spotCommander.turnLeft()
             elif "turnRight" in command:
                 print("Playing sound")
-                os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
-                time.sleep(1)
+                #os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
+                time.sleep(2)
                 spotCommander.turnRight()
             else:
                 continue
