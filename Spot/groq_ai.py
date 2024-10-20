@@ -1,6 +1,5 @@
 from groq import Groq
 
-
 def get_commands(text):
     client = Groq(
         api_key = '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',
@@ -31,5 +30,3 @@ def get_commands(text):
     print(chat_completion.choices[0].message.content)
     
     return chat_completion.choices[0].message.content
-
-get_commands("Spot I want you to back up and turn left")

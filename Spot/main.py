@@ -21,7 +21,7 @@ def main():
 
         commands = spotCommander.getCommands()
 
-        time.sleep(1)
+        time.sleep(2)
         spotCommander.forward()
         time.sleep(2)
         #sample_name = "taunt.wav"
