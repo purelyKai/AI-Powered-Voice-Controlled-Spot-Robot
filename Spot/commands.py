@@ -5,8 +5,6 @@ from groq_ai import *
 from stt import *
 # import cv2
 
-# import cv2
-
 ROBOT_IP = "192.168.80.3"#os.environ['ROBOT_IP']
 SPOT_USERNAME = "admin"#os.environ['SPOT_USERNAME']
 SPOT_PASSWORD = "2zqa8dgw7lor"#os.environ['SPOT_PASSWORD']
@@ -47,7 +45,3 @@ class SpotCommands:
     
         final_commands = commands.split()
         return final_commands
-       
-
-
-
