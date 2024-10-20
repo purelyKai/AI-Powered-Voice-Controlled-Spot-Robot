@@ -12,17 +12,20 @@ async def getText():
         deepgram = Deepgram(API_KEY)
         
         # Open the audio file as a binary buffer
-        with open(AUDIO_FILE, "rb") as audio_file:
+        with open(AUDIO_FILE, "rb") as audio_file:  # Ensure the file is opened in binary mode
             buffer_data = audio_file.read()
 
         # STEP 2: Configure Deepgram options for audio analysis
         options = {
-            "model": "nova-2",
+            "model": "nova-2",  # Ensure this is a valid model name
             "smart_format": True
         }
 
         # STEP 3: Call the transcribe method asynchronously
-        response = await deepgram.transcription.prerecorded(buffer_data, options)
+        response = await deepgram.transcription.prerecorded(
+            {'buffer': buffer_data, 'mimetype': 'audio/wav'},  # Add mimetype here
+            options
+        )
 
         # STEP 4: Extract the transcript from the response
         transcript = response["results"]["channels"][0]["alternatives"][0]["transcript"]
@@ -34,6 +37,6 @@ async def getText():
         print(f"Exception: {e}")
 
 # Run the async function
-if __name__ == "__main__":
-    # Since getText is async, run it with asyncio
-    asyncio.run(getText())
+# if __name__ == "__main__":
+#     # Since getText is async, run it with asyncio
+#     asyncio.run(getText())

@@ -31,3 +31,5 @@ def get_commands(text):
     print(chat_completion.choices[0].message.content)
     
     return chat_completion.choices[0].message.content
+
+get_commands("Spot I want you to back up and turn left")

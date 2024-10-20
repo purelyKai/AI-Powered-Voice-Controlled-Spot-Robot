@@ -18,11 +18,11 @@ class SpotCommands:
         self.sample_name = "command.wav"
         
     def forward(self):
-        self.spot.move_to_goal(goal_x=.5, goal_y=0)
+        self.spot.move_to_goal(goal_x=1, goal_y=0)
         return
 
     def back(self):
-        self.spot.move_to_goal(goal_x=-.5, goal_y=0)
+        self.spot.move_to_goal(goal_x=-1, goal_y=0)
         return
 
     def turnLeft(self):
@@ -44,7 +44,7 @@ class SpotCommands:
         #API CALL TO DEEPGRAM HERE
         text = getText()
         commands = get_commands(text)
-        # command_set = ["forward", "turnLeft", "turnRight", "back"]
+    
         final_commands = commands.split()
         return final_commands
        

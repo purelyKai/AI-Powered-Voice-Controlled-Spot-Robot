@@ -34,12 +34,24 @@ def main():
         commands = spotCommander.getCommands()
         for command in commands:
             if "forward" in command:
+                print("Playing sound")
+                os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
+                time.sleep(1)
                 spotCommander.forward()
             elif "back" in command:
+                print("Playing sound")
+                os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
+                time.sleep(1)
                 spotCommander.back()
             elif "turnLeft" in command:
+                print("Playing sound")
+                os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
+                time.sleep(1)
                 spotCommander.turnLeft()
             elif "turnRight" in command:
+                print("Playing sound")
+                os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
+                time.sleep(1)
                 spotCommander.turnRight()
             else:
                 continue
