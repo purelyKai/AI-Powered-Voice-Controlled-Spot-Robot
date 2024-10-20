@@ -19,13 +19,13 @@ def capture_image():
     # // "image": "ghcr.io/otaberu/hackathon-spot-image:main",
 def main():
     #example of using micro and speakers
-    # print("Start recording audio")
-    # sample_name = "aaaa.wav"
-    # cmd = f'arecord -vv --format=cd --device={os.environ["AUDIO_INPUT_DEVICE"]} -r 48000 --duration=10 -c 1 {sample_name}'
-    # print(cmd)
-    # os.system(cmd)
-    # print("Playing sound")
-    # os.system(f"ffplay -nodisp -autoexit -loglevel quiet {sample_name}")
+    print("Start recording audio")
+    sample_name = "aaaa.wav"
+    cmd = f'arecord -vv --format=cd --device={os.environ["AUDIO_INPUT_DEVICE"]} -r 48000 --duration=10 -c 1 {sample_name}'
+    print(cmd)
+    os.system(cmd)
+    print("Playing sound")
+    os.system(f"ffplay -nodisp -autoexit -loglevel quiet {sample_name}")
 
     print("running3")
     # # Capture image
@@ -34,15 +34,15 @@ def main():
     # Use wrapper in context manager to lease control, turn on E-Stop, power on the robot and stand up at start
     # and to return lease + sit down at the end
 
-    with SpotController(username=SPOT_USERNAME, password=SPOT_PASSWORD, robot_ip=ROBOT_IP) as spot:
-        spotCommander = SpotCommands(spot)
-        spot.power_on_stand_up()
+    # with SpotController(username=SPOT_USERNAME, password=SPOT_PASSWORD, robot_ip=ROBOT_IP) as spot:
+    #     spotCommander = SpotCommands(spot)
+    #     spot.power_on_stand_up()
 
-        time.sleep(1)
-        spotCommander.openMic()
-        time.sleep(10)
-        spotCommander.closeMic()
-        time.sleep(3)
+    #     time.sleep(1)
+    #     spotCommander.openMic()
+    #     time.sleep(10)
+    #     spotCommander.closeMic()
+    #     time.sleep(3)
         #move foward
         # spotCommander.foward()
         # time.sleep(1)
@@ -51,7 +51,7 @@ def main():
         # time.sleep(1)
         # #turn right
         # spotCommander.turnRight()
-        time.sleep(1)
+        # time.sleep(1)
 
 
         
