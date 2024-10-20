@@ -37,9 +37,15 @@ def main():
     with SpotController(username=SPOT_USERNAME, password=SPOT_PASSWORD, robot_ip=ROBOT_IP) as spot:
         spotCommander = SpotCommands(spot)
         spot.power_on_stand_up()
-        #move foward
-        spotCommander.foward()
+
         time.sleep(1)
+        spotCommander.openMic()
+        time.sleep(10)
+        spotCommander.closeMic()
+        time.sleep(3)
+        #move foward
+        # spotCommander.foward()
+        # time.sleep(1)
         #turn left
         spotCommander.turnLeft()
         time.sleep(1)

@@ -3,7 +3,7 @@ import time
 from spot_controller import SpotController
 import math
 import subprocess
-
+# import cv2
 
 # import cv2
 
@@ -53,6 +53,12 @@ class SpotCommands:
             os.system(f"ffplay -nodisp -autoexit -loglevel quiet {self.sample_name}")
         else:
             print("No active microphone recording.")
+    
+    # def snapPhoto(self):
+    #     # camera_capture = cv2.VideoCapture(0)
+    #     rv, image = camera_capture.read()
+    #     print(f"Image Dimensions: {image.shape}")
+    #     camera_capture.release()
         
 
 
