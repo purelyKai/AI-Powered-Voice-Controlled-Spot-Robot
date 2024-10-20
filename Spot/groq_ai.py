@@ -12,9 +12,9 @@ def get_commands(text):
                 "role": "system",
                 "content": """Given the MESSAGE, extract any relevant commands to those listed below in the order they appear.
                 - forward
-                - back 
+                - back
                 - turnLeft
-                - turnRight. 
+                - turnRight
 
                 Respond with only the commands mentioned in the MESSAGE below
                 
