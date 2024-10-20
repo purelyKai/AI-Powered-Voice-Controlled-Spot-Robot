@@ -33,16 +33,18 @@ def main():
     time.sleep(2)
     # Use wrapper in context manager to lease control, turn on E-Stop, power on the robot and stand up at start
     # and to return lease + sit down at the end
+
     with SpotController(username=SPOT_USERNAME, password=SPOT_PASSWORD, robot_ip=ROBOT_IP) as spot:
+        spotCommander = SpotCommands(spot)
         spot.power_on_stand_up()
         #move foward
-        foward(spot)
+        spotCommander.foward()
         time.sleep(1)
         #turn left
-        turnLeft(spot)
+        spotCommander.turnLeft()
         time.sleep(1)
         #turn right
-        turnRight(spot)
+        spotCommander.turnRight()
         time.sleep(1)
 
 

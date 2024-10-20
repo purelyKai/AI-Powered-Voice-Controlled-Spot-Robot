@@ -15,6 +15,7 @@ class SpotCommands:
     def __init__(self, spot: SpotController) -> None:
         self.spot = spot
         self.micProcess = None
+        self.sample_name = "command.wav"
     def foward(self):
         self.spot.move_to_goal(goal_x=.5, goal_y=0)
         return
@@ -32,18 +33,24 @@ class SpotCommands:
         return
 
     def openMic(self):
-        sample_name = "command.wav"
-        cmd = f'arecord -vv --format=cd --device={os.environ["AUDIO_INPUT_DEVICE"]} -r 48000 --duration=10 -c 1 {sample_name}'
-        cmd = ['arecord', '-vv', '--format=cd', '--device=default', '-r', '48000', '--duration=10', '-c', '1', sample_name]
+        
+        # cmd = f'arecord -vv --format=cd --device={os.environ["AUDIO_INPUT_DEVICE"]} -r 48000 --duration=10 -c 1 {sample_name}'
+        cmd = ['arecord', '-vv', '--format=cd', '--device=default', '-r', '48000', '--duration=60', '-c', '1', self.sample_name]
         # Start the microphone process
         self.micProcess = subprocess.Popen(cmd)
         print("Spot is listening...")
 
+        #Call function to start streaming audio
+
     def closeMic(self):
         if self.mic_process is not None:
+            #FUNCTION CALL TO STOP STREAMING
+
+            #stop listening
             self.mic_process.terminate()  # Terminate the recording process
             self.mic_process  = None
             print("Spot stopped listening.")
+            os.system(f"ffplay -nodisp -autoexit -loglevel quiet {self.sample_name}")
         else:
             print("No active microphone recording.")
         
