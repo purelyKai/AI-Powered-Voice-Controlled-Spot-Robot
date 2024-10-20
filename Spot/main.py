@@ -32,6 +32,7 @@ def main():
         spot.power_on_stand_up()
 
         commands = spotCommander.getCommands()
+        sample_name = "taunt.wav"
         for command in commands:
             if "forward" in command:
                 print("Playing sound")
