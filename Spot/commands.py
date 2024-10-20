@@ -43,6 +43,7 @@ class SpotCommands:
 
         #API CALL TO DEEPGRAM HERE
         text = getText()
+        time.sleep(5)
         commands = get_commands(text)
         time.sleep(5)
         os.system("pkill arecord")
