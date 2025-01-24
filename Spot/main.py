@@ -1,56 +1,55 @@
 import time
 from spot_controller import SpotController
-from commands import *
-# import cv2
+from commands import SpotCommands
 
-ROBOT_IP = "192.168.80.3"#os.environ['ROBOT_IP']
-SPOT_USERNAME = "admin"#os.environ['SPOT_USERNAME']
-SPOT_PASSWORD = "2zqa8dgw7lor"#os.environ['SPOT_PASSWORD']
+ROBOT_IP = "192.168.80.3"  # Replace with actual robot IP
+SPOT_USERNAME = "admin"    # Replace with Spot username
+SPOT_PASSWORD = "2zqa8dgw7lor"  # Replace with Spot password
 
 def main():
-    print("running3")
+    print("Initializing Spot...")
     time.sleep(2)
 
     with SpotController(username=SPOT_USERNAME, password=SPOT_PASSWORD, robot_ip=ROBOT_IP) as spot:
         spotCommander = SpotCommands(spot)
         spot.power_on_stand_up()
+        print("Spot powered on and standing.")
 
-        time.sleep(1)
-        spotCommander.back()
-        time.sleep(1)
+        try:
+            while True:
+                print("Awaiting commands...")
+                commands = spotCommander.getCommands()
 
-        commands = spotCommander.getCommands()
+                for command in commands:
+                    if "forward" in command:
+                        spotCommander.forward()
+                    elif "back" in command:
+                        spotCommander.back()
+                    elif "turnLeft" in command:
+                        spotCommander.turnLeft()
+                    elif "turnRight" in command:
+                        spotCommander.turnRight()
+                    elif "bow" in command:
+                        spotCommander.bow()
+                    elif "circleDance" in command:
+                        spotCommander.circleDance(radius=1, duration=5)
+                    elif "lieDown" in command:
+                        spotCommander.lieDown()
+                        break
+                    elif "sidestep" in command:
+                        direction = "left" if "left" in command else "right"
+                        spotCommander.sidestep(direction=direction, steps=2)
+                    elif "patrol" in command:
+                        waypoints = [(1, 0), (2, 2), (0, 2)]  # Example waypoints
+                        spotCommander.patrol(waypoints=waypoints)
+                    else:
+                        print(f"Unknown command: {command}")
+                time.sleep(2)
 
-        time.sleep(2)
-        spotCommander.turnLeft()
-        time.sleep(1)
-        spotCommander.turnRight()
-        time.sleep(1)
-        #sample_name = "taunt.wav"
-        for command in commands:
-            if "forward" in command:
-                print("Playing sound")
-                #os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
-                time.sleep(2)
-                spotCommander.forward()
-            elif "back" in command:
-                print("Playing sound")
-                #os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
-                time.sleep(2)
-                spotCommander.back()
-            elif "turnLeft" in command:
-                print("Playing sound")
-                #os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
-                time.sleep(2)
-                spotCommander.turnLeft()
-            elif "turnRight" in command:
-                print("Playing sound")
-                #os.system(f"ffplay -nodisp -autoexit -loglevel quiet volume=2.0 {sample_name}")
-                time.sleep(2)
-                spotCommander.turnRight()
-            else:
-                continue
-            time.sleep(2)
+        except KeyboardInterrupt:
+            print("Shutting down...")
+            spot.power_off_sit_down()
+            print("Spot is powered off.")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
