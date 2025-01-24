@@ -3,8 +3,8 @@
 Interaction with Spot is based on docker containers with code. You could fork this repo to test your own code. All basic functions are introduced in _main.py_.
 
 ## Image link
-Image link could be acquired in **packages** section of the main repository page. After fork, you might need to turn on github action to make it work.
 
+Image link could be acquired in **packages** section of the main repository page. After fork, you might need to turn on github action to make it work.
 
 ## How to use this image
 
@@ -15,6 +15,7 @@ pipx install rn-cli
 ```
 
 ### Create a user key
+
 ```
 rn keys gen user.key
 ```
@@ -30,6 +31,7 @@ export USER_KEY_PATH=user.key
 ```
 
 ### You can check, if you see Spot
+
 ```
 rn robots list
 ```
@@ -37,6 +39,7 @@ rn robots list
 ### Send job to robot
 
 Create _job.json_, change image link to your version
+
 ```
 {
   "image": "ghcr.io/otaberu/hackathon-spot-image:main",
@@ -64,12 +67,15 @@ Create _job.json_, change image link to your version
 ```
 
 Create job (after you got access from Vitaly)
+
 ```
 rn jobs add job.json spot
 ```
 
-If you change last line of Dockerfile to ```CMD ["/bin/sh"]```, you could access terminal with
+If you change last line of Dockerfile to `CMD ["/bin/sh"]`, you could access terminal with
+
 ```
 rn jobs terminal spot JOB_ID
 ```
-Do not forget to exit it with ```exit``` command 
+
+Do not forget to exit it with `exit` command
