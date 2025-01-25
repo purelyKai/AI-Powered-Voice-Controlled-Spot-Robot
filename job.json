@@ -1,5 +1,5 @@
 {
-  "image": "ghcr.io/purelykai/AI-Powered-Voice-Controlled-Spot-Robot:main",
+  "image": "ghcr.io/purelykai/cal-hacks-11.0:main",
   "container_name": "",
   "ports": [],
   "network_mode": "host",
